@@ -1,0 +1,26 @@
+body {
+    background-color: #0A174E;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bday {
+    font-size: 30px;
+    font-weight: bold;
+    color: #F5D042;
+}
+
+.img {
+    width: 100px;
+}
+
+#myBday {
+    color: #DAA03D;
+    font-size: 80px;
+}
