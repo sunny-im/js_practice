@@ -9,7 +9,7 @@ function bDay() {
     var sec = Math.ceil(remain%(1000*60) / 1000);
     
 
-    dDay.innerHTML = (day + "일 " + hour + "시간 " + min + "분 " + sec + "초 " + " 남았습니다 두둥 !!");
+    dDay.innerHTML = (day + "일 " + hour + "시간 " + min + "분 " + sec + "초 " + " 남았습니다." +"<br>"+"두둥 !!");
 }
 
 bDay();
