@@ -9,5 +9,9 @@ function getTime(){
     timeNow.innerHTML = "지금은 " + hour + "시 " + min + "분 " + sec + "초 입니다 :) ";
 }
 
+function convertTime(time){
+    return time < 10 ? `0${time}` : time
+}
+
 getTime();
 setInterval(getTime,1000);
