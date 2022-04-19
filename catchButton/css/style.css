@@ -1,0 +1,15 @@
+#box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#clickBtn {
+    padding: 40px 30px;
+    background: tomato;
+    border: 2px solid tomato;
+    color: gold;
+    font-weight: bold;
+    font-size: 20px;
+}
