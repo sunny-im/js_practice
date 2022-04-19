@@ -30,3 +30,7 @@ function record() {
     record_ul.prepend(record_li); // record_ul(부모)태그 가장 앞에 record_li
 }
 
+document.getElementById("reset").addEventListener('click',function(){
+    document.getElementById("record_ul").remove();
+});
+
