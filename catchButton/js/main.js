@@ -1,19 +1,17 @@
-const mouse = document.getElementById("clickBtn");
-const box = document.getElementById("box");
-mouse.addEventListener('mouseover', move);
+const clickBtn = document.getElementById("clickBtn");
+clickBtn.addEventListener('mouseover', move);
 
+let x=0;
+let y=0;
 function move() {
-    loc = Math.floor(Math.random() * 500) + 1;
-    box.style.top = loc;
-    console.log(loc);
-    // loc = Math.floor(Math.random() * 500) + 1;
-    // box.style.bottom = loc;
-    // loc = Math.floor(Math.random() * 500) + 1;
-    // box.style.left = loc;
-    // loc = Math.floor(Math.random() * 500) + 1;
-    // box.style.right = loc;
+    x = Math.floor(Math.random() * 1000) + 1;  // Random-Functions Math.floor(Math.random() * Max) + Min
+    y = Math.floor(Math.random() * 1000) + 1; 
+    clickBtn.style.top = x+'px';
+    //clickBtn.style.top = -x+'px';
+    clickBtn.style.left = y+'px';
+    //clickBtn.style.left = -y+'px';
 }
 
-mouse.addEventListener('click',function(){
+clickBtn.addEventListener('click',function(){
     alert("잡혔다!!");
 });

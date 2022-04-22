@@ -1,0 +1,13 @@
+#rsp {
+    width: 100px;
+    height: 100px;
+}
+
+#rock, #scissors, #paper {
+    padding: 10px;
+    border: 2px solid gold;
+    background-color: black;
+    color: gold;
+    font-size: medium;
+    font-weight: bold;
+}
