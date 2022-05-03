@@ -19,7 +19,7 @@ body {
 }
 
 /* 배경사진 */
-/* .calendar::before {
+.calendar::before {
     content: "";
     width: 600px;
     height: 100%;
@@ -30,7 +30,7 @@ body {
     background-size: 100%;
     opacity: 0.5;
     z-index: -1;
-} */
+} 
 
 .header {
     display: flex;
