@@ -19,15 +19,15 @@
 
       function jsonFunc(jsonText) {
           const date = new Array();
-          const workDay = new Array();
-          const done = new Array();
+          const when = new Array();
+          const menu = new Array();
 
           const json = JSON.parse(jsonText);
 
           for(i=0; i<json.length; i++) {
               date[i] = json[i].date;
-              workDay[i] = json[i].days;
-              done[i] = json[i].work;
+              when[i] = json[i].when;
+              menu[i] = json[i].menu;
           }
           const table = document.getElementById("table");
 
@@ -38,10 +38,10 @@
               td1.appendChild(document.createTextNode(date[i] + ""));
               
               const td2 = document.createElement("td");			 
-              td2.appendChild(document.createTextNode(workDay[i] + ""));
+              td2.appendChild(document.createTextNode(when[i] + ""));
               
               const td3 = document.createElement("td");			 
-              td3.appendChild(document.createTextNode(done[i]+ ""));
+              td3.appendChild(document.createTextNode(menu[i]+ ""));
               
               tr.appendChild(td1);
               tr.appendChild(td2);
@@ -60,7 +60,7 @@
     <thead class="table-dark">
       <tr>
         <th>Date</th>
-        <th>M/L/D</th>
+        <th>When</th>
         <th>Menu</th>
       </tr>
     </thead>
