@@ -1,0 +1,17 @@
+* {
+    background-color: beige;
+}
+
+img {
+    width: 500px;
+    height: 500px;
+}
+
+button {
+    border: none;
+    outline: none;
+} 
+
+.popup {
+    position: absolute;
+}
