@@ -13,24 +13,24 @@
       result = data;
       console.log(data);
 
-      const $table = document.getElementById("table");
+      const table = document.getElementById("table");
 
       for(let i of data) {
         console.log(i);
 
-        const $tr = document.createElement("tr");
-        const $td1 = document.createElement("td");
-        const $td2 = document.createElement("td");
-        const $td3 = document.createElement("td");
-        $td1.innerHTML = i.date;
-        $td2.innerHTML = i.when;
-        $td3.innerHTML = i.menu;
+        const tr = document.createElement("tr");
+        const td1 = document.createElement("td");
+        const td2 = document.createElement("td");
+        const td3 = document.createElement("td");
+        td1.innerHTML = i.date;
+        td2.innerHTML = i.when;
+        td3.innerHTML = i.menu;
 
-        $tr.appendChild($td1);
-        $tr.appendChild($td2);
-        $tr.appendChild($td3);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
 
-        $table.appendChild($tr);
+        table.appendChild(tr);
       }
      }
   </script>
