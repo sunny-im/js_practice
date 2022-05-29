@@ -13,8 +13,30 @@
       result = data;
       console.log(data);
 
+      const table = document.getElementById("table");
+
       for(let i of data) {
-        console.log(i.date[i]);
+        console.log(i);
+        date = i.date;
+        when = i.when;
+        menu = i.menu;
+
+        const tr = document.createElement("tr");
+              
+              const td1 = document.createElement("td");			  
+              td1.appendChild(document.createTextNode(date + ""));
+              
+              const td2 = document.createElement("td");			 
+              td2.appendChild(document.createTextNode(when + ""));
+              
+              const td3 = document.createElement("td");			 
+              td3.appendChild(document.createTextNode(menu + ""));
+              
+              tr.appendChild(td1);
+              tr.appendChild(td2);
+              tr.appendChild(td3);
+              
+              table.appendChild(tr);
       }
      }
      
@@ -28,7 +50,7 @@
     <thead class="table-dark">
       <tr>
         <th>Date</th>
-        <th>M/L/D</th>
+        <th>When</th>
         <th>Menu</th>
       </tr>
     </thead>

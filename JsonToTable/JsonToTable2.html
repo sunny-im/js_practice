@@ -23,11 +23,13 @@
           const menu = new Array();
 
           const json = JSON.parse(jsonText);
+          console.log(json);
 
           for(i=0; i<json.length; i++) {
               date[i] = json[i].date;
               when[i] = json[i].when;
               menu[i] = json[i].menu;
+              
           }
           const table = document.getElementById("table");
 
