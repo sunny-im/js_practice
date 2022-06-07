@@ -12,7 +12,7 @@
     .box2 {border: 2px solid yellowgreen; background-color: yellowgreen; width:100%;}
     .box3 {border: 2px solid gold; background-color: gold;}
 </style>
-<body>
+<body class="topBody">
     <div class="box1">
         <h1 class="1">Hi</h1>
         <h1 class="2">Hi</h1>
@@ -93,6 +93,12 @@
             });
         }
 
+    });
+
+    $(".box2").on("click",function(){
+        $("html, body").animate({       // 모든 브라우저 사용하기 위해 html,body
+            scrollTop : 0
+        },"slow")
     });
 </script>
 </html>
