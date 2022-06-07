@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<style>
+    .box1 { border: 5px solid tomato; background-color: tomato;}
+    .box2 {border: 2px solid yellowgreen; background-color: yellowgreen; width:100%;}
+    .box3 {border: 2px solid gold; background-color: gold;}
+</style>
+<body>
+    <div class="box1">
+        <h1 class="1">Hi</h1>
+        <h1 class="2">Hi</h1>
+        <h1 class="3">Hi</h1>
+        <h1 class="4">Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+        <h1>Hi</h1>
+    </div>
+    <div class="box2">
+        <h4>안녕</h4>
+    </div>
+    <div class="box3">
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+        <h4>Hello</h4>
+    </div>
+</body>
+<script>
+    var box = $(".box1").length;
+    var boxTop = $(".box1").offset();
+    var boxTop1 = $(".1").offset();
+    var boxTop2 = $(".2").offset();
+    var boxTop3 = $(".3").offset();
+    var boxTop_1 = $(".box3").offset().top; // 1073
+    
+    //$(".box1").offset({top:20, left:20});
+    
+    console.log("box1는 ", box);
+    console.log("boxTop은 ", boxTop);
+    console.log("boxTop1은 ", boxTop1);
+    console.log("boxTop2은 ", boxTop2);
+    console.log("boxTop3은 ", boxTop3);
+    
+    
+    var winH = $(window).height();
+    console.log("winH는", winH);  // 328
+    
+    
+    $(window).scroll(function(){
+        var nowScroll = $(window).scrollTop();
+        var nowBSroll = nowScroll + winH - 70;
+        
+        //console.log("nowScroll은 " , nowScroll);  
+        console.log("nowBSroll은 " , nowBSroll); 
+        console.log("boxTop_1는 ", boxTop_1); // 1073
+        
+        if(nowBSroll > boxTop_1) {
+            $(".box2").css({
+                position : "fixed",
+                bottom : "0",
+                left : "0" 
+            });
+        } else {
+            $(".box2").css({
+                position : "relative",
+                bottom : "auto",
+                left : "auto" 
+            });
+        }
+
+    });
+</script>
+</html>
