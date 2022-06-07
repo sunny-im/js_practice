@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input[type="checkbox"] { display: none;}
+    input[type="checkbox"] + label span {
+        display: inline-block;
+        width: 19px;
+        height: 19px;
+        background-color: yellowgreen;
+        vertical-align: middle;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+    input[type="checkbox"]:checked + label span {
+        background-color: tomato;
+    }
+
+    /* ---------------------------------- */
+    input[type="radio"] { display:none; }
+    input[type="radio"] + label span {
+        display:inline-block;
+        width:19px;
+        height:19px;
+        vertical-align:middle;
+        background-color: gold;
+        cursor:pointer;
+        margin-right: 5px;
+    }
+
+    input[type="radio"] + label {
+        color: red;
+        font-family:Arial, sans-serif;
+    }
+
+
+    input[type="radio"]:checked + label span {
+        background: url('/img/yes.png') no-repeat 1px center;
+
+    } 
+</style>
+<body>
+    <div>
+        <input type="checkbox" id="check">   <!-- input의 id == label의 for , 상호작용/연결가능-->
+        <label for="check"><span></span>checkbox style change!!!</label>
+    </div>
+    <div>
+        <input type="checkbox" id="check2"> 
+        <label for="check2"><span></span>checkbox style change!!!</label>
+    </div>
+
+    -----------------------------------------------------------------
+
+    <div>
+        <input type="radio" id="1" name="1" value="1" checked>   
+        <label for="1"><span></span>radio style change One!!!</label>
+        <br>
+        <input type="radio" id="2" name="1" value="2"> 
+        <label for="2"><span></span>radio style change Two!!!</label>
+    </div>
+</body>
+</html>
