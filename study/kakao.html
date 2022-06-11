@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+</head>
+<body>
+        <!-- 카카오톡 채널추가 -->
+    <div id="kakao-talk-channel-add-button"></div>
+    <div id="kakao-talk-channel-chat-button"></div>
+
+
+    <script type="text/javascript">
+      // 사용할 앱의 JavaScript 키를 설정해 주세요.
+      Kakao.init('c089c8172def97eb00c07217cae17495');
+      // 채널 추가하기 버튼을 생성합니다.
+      Kakao.Channel.createAddChannelButton({
+        container: '#kakao-talk-channel-add-button',
+        channelPublicId: '_EdxiYb',
+        size: 'small',
+        supportMultipleDensities: true,
+      });
+      
+      // 채널 1:1 채팅 버튼을 생성합니다.
+      Kakao.Channel.createChatButton({
+        container: '#kakao-talk-channel-chat-button',
+        channelPublicId: '_EdxiYb',
+        title: 'consult',
+        size: 'small',
+        color: 'yellow',
+        shape: 'pc',
+        supportMultipleDensities: true,
+      });
+    </script>
+</body>
+</html>
