@@ -34,6 +34,35 @@
         shape: 'pc',
         supportMultipleDensities: true,
       });  
+      </script>
+
+
+
+      <!-- 가지고 있는 이미지에 채널추가하기 연결 -->
+
+      <a id="channel-add-button" href="#" onclick="void addChannel();">
+        <img src="/study/img/IDH_4.png"  alt="카카오톡 채널 추가 버튼"/>
+      </a>
+     
+    <script type="text/javascript">
+      function addChannel() {
+        Kakao.Channel.addChannel({
+          channelPublicId: '_EdxiYb',
+        })
+      }
+    </script>
+
+
+    <!-- 가지고 있는 이미지에 채팅 연결 -->
+    <a id="channel-chat-button" href="#" onclick="void chatChannel();">
+      <img src="/study/img/IDH_4.png"/>
+    </a>
+    <script type="text/javascript">
+      function chatChannel() {
+        Kakao.Channel.chat({
+          channelPublicId: '_EdxiYb',
+        })
+      }
     </script>
 </body>
 </html>
