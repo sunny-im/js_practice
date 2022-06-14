@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
+	<!-- <script type="text/javascript" src="/js/jquery-1.8.0.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+            var uuid = getParameterByName("plusId");
+            var url = 'https://bizmessage.kakao.com/chat/open';
+            uuid = decodeURIComponent(uuid);
+            submitJson(url, { uuid : uuid}, 'post');
+        });
+	</script>
+</head>
+</body>
+<script type="text/javascript">
+	var submitJson = function(url, jsonParam, method, target)
+    {
+        var form = $("<form></form>");
+
+        form.attr("method", method ? method : "post");
+        form.attr("action", url);
+        form.attr("target", target ? target : "_self");
+
+        if (method == undefined || method == "get")
+        {
+            jsonParam = (jsonParam == undefined) ? {} : jsonParam;
+            jsonParam.__dmy = new Date().getTime();
+        }
+
+        for(var key in jsonParam)
+        {
+            var attrName = key;
+            var attrValue = jsonParam[key];
+
+            var input = $("<input></input>");
+            input.attr("type", "hidden");
+            input.attr("name", attrName);
+            input.attr("value", attrValue);
+            form.append(input);
+        }
+
+        $('body').append(form);
+        form.submit();
+    };
+    var getParameterByName = function (name)
+    {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(window.location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
+</script>
+
+</html>
