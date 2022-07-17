@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/d03f2c61fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Todo/style.css">
+    <script defer src="/Todo/main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <section class="inputArea">
+            <input type="text" id="taskInput">
+            <button id="addBtn"><i class="fa fa-solid fa-message-plus"></i></button>
+        </section>
+        <section class="taskArea">
+            <div class="taskTabs">
+                <div id="underLine"></div>
+                <div id="all">
+                    모두
+                </div>
+                <div id="ongoing">
+                    진행중
+                </div>
+                <div id="done">
+                    완료
+                </div>
+            </div>
+            <div id="taskBoard">
+            </div>
+        </section>
+    </div>
+</body>
+</html>
