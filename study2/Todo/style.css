@@ -1,9 +1,10 @@
 body { margin: 0; background-image: url("/Todo/img/background.jpeg"); background-size: cover;
 }
 
-.container { background-color: white; min-height: 100vh; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.container { background-color: white; min-height: 100vh; box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; border-top: 8px solid pink;
 }
-
+#taskInput {width: 80%; border: 1px solid pink; margin-bottom: 10px;}
+#addBtn {border: 1px solid pink; background-color: pink;}
 .taskArea { border : 1px solid lightgray}
 .taskTabs { display: flex; border-bottom : 1px solid lightgray; position: relative; }
 .taskTabs div {padding: 1em; cursor: pointer;}
@@ -15,7 +16,7 @@ body { margin: 0; background-image: url("/Todo/img/background.jpeg"); background
 .task span{padding: 1em;}
 
 .btnBox {display: flex;}
-.btnBox button , #addBtn{height: 100%; border: none; width: 5em; margin: 0; background-color: white;}
+.btnBox button {height: 100%; border: none; width: 5em; margin: 0; background-color: white;}
 .fa-face-smile-plus {color : blue;}
 .fa-check {color: green;}
 .fa-trash {color: red;}
