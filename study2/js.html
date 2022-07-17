@@ -106,6 +106,65 @@
     // }
     // }
     // console.log(isPrime)    
+
+    // 8. 함수
+    // 8-1
+    function greet() {
+        console.log("안녕 나는 써니얌!")
+    }
+    greet()
+
+    //8-2 이름 매개변수로 전달
+    function greet2(name) {
+        console.log("안녕 나는 " , name ,"얌!")
+    }
+    greet2("hako")
+
+    //8-3 전달받은 매개변수 return 
+    function greet3(name) {
+        return name
+    }
+    let result = greet3("sunny")
+    console.log(result)
+
+    // 8-4
+    function meetAt(year, month, day) {
+        if (day) {
+            return `${year}/${month}/${day}`
+        } else if (month) {
+            return `${year}년 ${month}월`;
+        } else if (year) {
+            return `${year}년`;
+        }
+    }
+    console.log(meetAt(2022,5));
+
+    //8-5 arr중 가장 작은값 return
+    function findSmallestElement(arr) {
+        if (arr.length == 0) {
+            return 0;
+        } 
+        let result = arr[0]
+        for (let i=1; i<arr.length; i++) {
+            if(result > arr[i]) {
+                result = arr[i]
+            } 
+        }
+        return result;
+    }
+    console.log(findSmallestElement([100,200,3,2,1]))
+
+    //8-6 돈을 매개변수로 받으면 몇 개의 지폐와 동전이 필요한지 최소 갯수
+    let unit = [50000, 10000, 5000, 1000, 500, 100]
+    function changeMoney(money) {
+        for(let i=0; i<unit.length; i++) {
+            //Math.floor => 소수점 밑 버림
+            let num = Math.floor(money/unit[i])
+            money = money - (unit[i] * num)
+            console.log(`${unit[i]} X ${num}`)
+        }
+    }
+    changeMoney(12300)
 </script>
 <body>
 </body>
