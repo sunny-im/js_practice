@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 객체 초기화
+        let name = "sunny";
+        let age =20;
+        // 변수이름이 키 값과 동일할 떄 사용!
+        let person = {name,age}
+        console.log(person)
+
+        // 객체 분리
+        let hobby = {
+            one : "수영",
+            two : "달리기"
+        }
+        let {one, two} = hobby;
+        console.log(one, two); 
+
+        // 동적,정적 변수 같이 사용하기 Literal
+        console.log(`내 이름은 ${name}이고 나이는 ${age}이고 취미는 ${one}입니당`);
+
+        // 배열 안의 값 꺼내오기
+        let arr = [1,2,3];
+        let [a,b,c] = arr;
+        console.log(a,b,c);
+        let [d, ...rest] = arr;
+        console.log(rest)
+
+        // 객체도 동일
+        let person2 = {
+            name2 : "hako",
+            age2 : 8,
+            cute : true
+        }
+
+        let {name2,...restInfo} = person2;
+        console.log(name2, restInfo);
+
+        // 배열 합체 spread
+        let q = [1,2]
+        let w = [3,4]
+        let e = [5,6]
+        let result = [...q, ...w, ...e]  // ...의 모든것 복사하기
+        console.log(result)
+
+        // 함수 선언방식 "=>"가 function을 대체 , () 매개변수 
+        let foo = () => {
+            console.log("함수")
+        }
+        // return 생략가능
+        function foo2() {
+            return "haha"
+        }
+        let foo3 = () => "haha"
+        console.log(foo3())
+
+        // 화살표함수의 단점!  (전역변수와 지역변수를 구분하기 위한) this 사용불가
+        // 화살표함수의 this는 window다!!!
+        let ageage = 20;
+        let personperson = {
+            name : "hehe",
+            age : 25,
+            getInfo:function(){
+                console.log("전역변수와 object안의 변수가 같으면 전역변수가 나온다",age)
+                console.log("그래서 나의 age가 필요하면 this를 사용(함수를 부르는 객체)",this.age)
+            }
+        }
+        personperson.getInfo()  
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

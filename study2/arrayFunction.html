@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let names = ["a" ,"b","c","d","e","f","g","h","i"]
+        let person = [
+            {name: "a", age:5},
+            {name: "b", age:6},
+            {name: "c", age:9},
+            {name: "d", age:20},
+            {name: "e", age:20}
+        ]
+        
+        // forEach() 매개변수로 함수를 받는다, return 이 필요없다.
+        names.forEach((item,idx)=>{console.log(item,idx)})
+
+        // map(), 반드시 배열을 return
+        let data = names.map((item,idx)=>{
+            return item+"haha"
+        })
+        console.log(data)
+        
+        let data2 = person.map((item)=>{
+            return item.age
+        })
+        console.log(data2)
+
+        // filter()  map()하고 똑같지만 true인 값만 return
+        let data3 = person.filter((item)=>{
+            return item.age == 20
+        })
+        console.log(data3)
+
+        // some() 이것도 filter()랑 똑같... 하나라도 있니 ? true/false를 반환
+        let data4 = person.some((item)=>{
+            return item.age == 29
+        })
+        console.log(data4)
+
+        // every() 모든게 있니?
+        let data5 = person.every((item)=>{
+            return item.age == 29
+        })
+        console.log(data5)
+
+        // find() filter()와는 다르게 string타입으로 반환되며 첫번째로 찾은 딱 하나만 반환!!!
+        let data6 = person.find((item)=>{
+            return item.age == 5
+        })
+        console.log(data6)
+
+        // findIndex() , 만약 값이 여러개면 첫번쨰 아이템의 인덱스번호만 반환
+        let data7 = person.findIndex((item)=>{
+            return item.age == 20
+        })
+        console.log(data7)
+
+        console.log("----------")
+        let names2 = [
+            "Steven Paul Jobs",
+            "Bill Gates",
+            "Mark Elliot Zuckerberg",
+            "Elon Musk",
+            "Jeff Bezos",
+            "Warren Edward Buffett",
+            "Larry Page",
+            "Larry Ellison",
+            "Tim Cook",
+            "Lloyd Blankfein",
+        ];
+
+        // 1. map 이니셜만 출력하기
+        let nameData = names2.map((datas) => {
+        let splitName = datas.split(" ");
+        let initial = "";
+        splitName.forEach((nameItem) => (initial += nameItem[0]));
+            return initial;
+        })
+        console.log(nameData)
+
+        //2. filter 같은 글자가 연속해서 들어간 사람 출력
+        let nameData2 = names2.filter((datas) => {
+            let splitName = datas.split("");
+            return splitName.some((letter,idx)=>
+                letter == splitName[idx+1]);
+            })
+        console.log(nameData2)
+
+        //3. some 성을 제외한 이름에 p를 포함한 사람이 있는지
+        let nameData3 = names2.some((datas)=>{
+            let splitName = datas.split(" ")
+            splitName.pop()
+            return splitName.some(eachName=>eachName.toLocaleLowerCase().includes("p"))
+        })
+        console.log(nameData3)
+
+        //4. every 모든이름에 a가 포함?
+        let nameData4 = names2.every((datas)=>{
+            return datas.includes('a')
+        })
+        console.log(nameData4)
+
+        //5. find 미들네임이 포함된 사람
+        let nameData5 = names2.find((datas)=>{
+            return datas.split(" ").length>=3
+        })
+        console.log(nameData5)
+
+        //6. findIndex 미들네임이 포함된 사람의 인덱스
+        let nameData6 = names2.findIndex((datas)=>{
+            return datas.split(" ").length>=3
+        })
+        console.log(nameData6)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
