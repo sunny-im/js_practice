@@ -1,9 +1,9 @@
-API의 사전적 정의
+[API의 사전적 정의]
 API(Application Programming Interface 애플리케이션 프로그래밍 인터페이스[*], 응용 프로그램 프로그래밍 인터페이스)는 컴퓨터나 컴퓨터 프로그램 사이의 연결이다. 일종의 소프트웨어 인터페이스이며 다른 종류의 소프트웨어에 서비스를 제공한다.[1] 이러한 연결이나 인터페이스를 빌드하거나 사용하는 방법을 기술하는 문서나 표준은 API 사양으로 부른다.
 
 라고 하면 아주 와닿지 않는 설명이니 한마디로 말해서 서버(백엔드)와 클라이언트(프론트엔드) 사이의 대화 라고 이해하면 쉽다.
 
-프론트엔드와 백엔드
+[프론트엔드와 백엔드]
 프론트엔드는 유저에게 보여지는 부분이다 이를 레스토랑으로 비유를하면 손님이 와서 보는 의자, 식탁, 분위기, 메뉴 이런것들을 프론트엔드라고 할수있겠다. 유저와 소통하는 부분이고 프론트엔드에 속하는 범위는 HTML,CSS,자바스크립트,리액트 등이 있다.
 
 백엔드는 보여줄 내용이다. 유저에게 무엇을 보여줄지, 어떤내용을 보여줄지 정보를 들고있는 부분이고 프론트엔드의요청에 따라 백엔드는 데이터를 제공해준다. 마치 레스토랑에 주방이라고 보면된다. 손님이 주문한 음식에따라 주방은 준비를해서 요리를 내놓는다. 백엔드에 속하는 범위는 nodejs, mongoDB,Java,Oracle, MySQL과같은 데이터베이스영역이다.
@@ -12,3 +12,48 @@ API(Application Programming Interface 애플리케이션 프로그래밍 인터�
 API는 그 사이에서 대화를 주고받도록 도와주는 레스토랑 웨이터라고 보면 쉽겠다.
 
 ** news API : https://docs.newscatcherapi.com/api-docs/endpoints/search-news  
+
+
+[API 부르기!!!!!]
+Promise🤙
+자바스크립트에서 비동기 동작을 다루는 하나의 패턴이다
+
+promise가 나온 배경을 살펴보자🔍
+예전에는 promise 대신에 콜백함수를 이용해서 비동기를 처리함
+예를들면
+$.ajax("http://api.newscatcher.com/v2/search", (result) =>{
+console.log(result);
+});
+저 url이 호출되고 결과가 나오면 두번째 매개변수인 콜백함수를 불러서 result에 결과값을 넘겨줌 .
+근데 이렇게하면 가독성이 좀 떨어짐.
+
+그래서 나온게 promise
+Promsie는 이렇게 생겼다
+
+
+function delayP(sec){
+   return new Promise((resolve, reject) => {    
+      setTimeout(() => {    
+         resolve("success");    
+      }, sec * 1000);    
+   });
+}
+new Promise를 이용해서 promise를 생성하고
+promise 안에서는 resolve와 reject함수를 자동으로 갖는다.
+reslove는 결과가 문제없이 성공적으로 수행될때 호출하는 함수, reject는 중간에 에러가나면 에러를 처리할 수 있는 함수이다.
+resolve가 호출이되면 죽음의 콜백대신 .then()이나 async/await을 이용하여(둘다 하는 일이 비슷하다.) 그 결과값을 받아서 다른 일을 할수있다(결과를 보여준다던가 그런것들)
+
+async/await🚦
+async와 await은 동기적인 자바스크립트를 비동기적으로 처리하기위해쓴다. fetch는 promise를 리턴을한다. 그리고 우리가 필요한건 그 promise 속에서 api호출이 잘 이루어져 데이터를 받은다음 promise가 성공적으로 resolve 함수를 호출하기를 기다리는것이다. 이걸 해주는게 await이다. await은 promise가 resolve또는 reject를 호출할때 까지 기다려준다.
+await이 없으면 그냥 날것 그대로의 promise가 리턴된다
+await을 쓰려면 함수를 async로 선언해줘야한다, 둘은 세트라고 보면된다.
+그것외에도 async로 함수를 선언하면 그함수는 자동으로 promise를 반환한다(그말의 뜻은 또 이함수를 받아다가 다른 비동기 작업이 가능하다는 뜻이다)
+
+json
+서버 클라이언트 통신에서 많이 쓰이는 데이터 타입 (png, jpg이런것과 같이 어떤 그냥 데이터 타입임). 객체랑 똑같이생긴 텍스트라고 이해하면 좋음. 간단한 텍스트인데 객체랑 똑같애서 나중에 읽어오기도 편함. 그래서 json타입을 서버통신시 많이 사용함.
+fetch를 쓸때 항상 이 패턴
+
+
+let response = await fetch(url)
+let daa = await response.json()
+은 세트로 많이쓰이니 외워두면 좋음
