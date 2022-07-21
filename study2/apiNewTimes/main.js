@@ -56,7 +56,7 @@ const render = () =>{
         </div>
         <div class="col-lg-8">
             <h2>${item.title}</h2>
-            <p>if(${item.summary}==null)?"내용없음":${item.summary.substr(0,200)}...</p>
+            <p>${item.summary.substr(0,200)}...</p>
             <div>${item.rights || "no source"} * ${moment(item.published_date).fromNow()} </div>
         </div>
     </div>`
@@ -75,9 +75,9 @@ const openSearchBox = () => {
     let inputArea = document.getElementById("input-area");
     if (inputArea.style.display === "inline") {
         inputArea.style.display = "none";
-      } else {
-        inputArea.style.display = "inline";
-      }
+    } else {
+    inputArea.style.display = "inline";
+    }
 }
 searchBtn.addEventListener("click",getNewsByKeyword);
 getLatesNews();
