@@ -28,7 +28,7 @@ const getNews = async() => {
 
 const getLatesNews = async() => {
     // URL 클래스 사용..url 분석툴
-    url = new URL('https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=travel&page_size=10');
+    url = new URL('https://api.newscatcherapi.com/v2/latest_headlines?countries=KR&topic=science&page_size=10');
     getNews();
 }
 
@@ -38,7 +38,7 @@ const getNewsByKeyword = async () => {
     url = new URL(`https://api.newscatcherapi.com/v2/search?q=${keyword}&countries=KR&page_size=10`);
     getNews();
 }
-
+ 
 const getNewsByTopic = async (e) => {
     console.log("메뉴",e.target.textContent);
     let topic = e.target.textContent.toLowerCase();
