@@ -12,6 +12,26 @@
     <script defer src="/apiNewTimes/main.js"></script>
 </head>
 <body>
+    <div class="side-menu" id="mySidenav">
+        <button class="closebtn" onclick="closeNav()">&times;</button>
+        <div class="side-menu-list" id="menu-list">
+            <button>Sport</button>
+            <button>Tech</button>
+            <button>World</button>
+            <button>Finance</button>
+            <button>Politics</button>
+            <button>Business</button>
+            <button>Economics</button>
+            <button>Entertainment</button>
+            <button>Beauty</button>
+            <button>Travel</button>
+            <button>Music</button>
+            <button>Food</button>
+            <button>Science</button>
+            <button>Gaming</button>
+            <button>Energy</button>
+        </div>
+    </div>
     <section class="container">
         <section>
             <div class="top">
@@ -21,26 +41,6 @@
                     <input type="text" id="search-input" placeholder="search" />
                     <button id="search-button">Go</button>
                 </span>
-            </div>
-            <div class="side-menu" id="mySidenav">
-                <button class="closebtn" onclick="closeNav()">&times;</button>
-                <div class="side-menu-list" id="menu-list">
-                    <button>Sport</button>
-                    <button>Tech</button>
-                    <button>World</button>
-                    <button>Finance</button>
-                    <button>Politics</button>
-                    <button>Business</button>
-                    <button>Economics</button>
-                    <button>Entertainment</button>
-                    <button>Beauty</button>
-                    <button>Travel</button>
-                    <button>Music</button>
-                    <button>Food</button>
-                    <button>Science</button>
-                    <button>Gaming</button>
-                    <button>Energy</button>
-                </div>
             </div>
             
             <div class="headLine">
@@ -67,15 +67,16 @@
         <section id="news-board">
             <div class="row news">
                 <div class="col-lg-4">
-                    <img class="newsImgSize" src="/Todo/img/background.jpeg" alt="">
                 </div>
                 <div class="col-lg-8">
                 </div>
             </div>
         </section>
-
+        <nav aria-label="Page navigation example" class="pagenation-nav">
+            <ul class="pagination">
+            </ul>
+        </nav>
         
-    </div>
     </section>
 
 

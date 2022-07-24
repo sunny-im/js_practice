@@ -16,6 +16,8 @@
 
 /* 검색창 */
 .input-area {display: none;}
+#search-input {border: 1px solid burlywood;}
+#search-button {background-color: burlywood; border: 1px solid burlywood; color: white;}
 
 /* 모바일 */
 .m_menu {display:none;}
@@ -25,3 +27,7 @@
     .menus {display: none;}
     .news:first-child {border-top: 4px double #000;}
 }
+.pagenation-nav { display: flex; justify-content: center;}
+.pagination { margin-top: 1em;}
+.page-item.active .page-link{ background-color: burlywood; color: white; border-color: burlywood;}
+.page-link{ color:burlywood }
