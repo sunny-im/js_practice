@@ -2,9 +2,11 @@ let news = [];
 let page = 1;
 let totalPage = 1;
 let menus = document.querySelectorAll(".menus button")
+let sideMenus = document.querySelectorAll(".side-menu-list button")
 let searchBtn = document.getElementById("search-button");
 
 menus.forEach(menu => menu.addEventListener("click", (e) => getNewsByTopic(e)));
+sideMenus.forEach(menu => menu.addEventListener("click", (e) => getNewsByTopic(e)));
 
 /*
 API 호출 로직
