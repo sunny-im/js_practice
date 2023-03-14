@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<script>
+   // 화살표 함수
+   
+   function test(x,y) {
+        return x*y;
+    }
+    console.log(test(3,5));
+
+    const arrowTest = (x,y) => x*y;
+    console.log(arrowTest(2,5));
+    
+
+    // cancelBubble
+    function test() {
+        alert("2");
+    }
+    
+    function fnChk() {
+        alert("1");
+        event.cancelBubble = true; // false가 default값  (최상위 window 생략)
+    }
+
+    // datepicker
+    $(function(){
+        $("#datepicker").datepicker();
+    })
+
+</script>
+<body>
+
+    <!-- cancelBubble 예제 시작 -->
+        <div onClick="test();">
+            <div><input type="button" value="BT" onClick="fnChk();"></div>
+            <!-- cancelBubble=false; 일때 fnChk()실행 후 test()실행됨-->
+            <!-- cancelBubble=true; 일때 fnChk()만 실행됨-->
+            <div><input type="checkbox"></div>
+            <!-- cancelBubble=false; 일때 test()만 실행됨-->
+            <!-- cancelBubble=true; 일때 test()만 실행됨-->
+            <div>이곳을 눌러보세요</div>
+            <!-- cancelBubble=false; 일때 test()만 실행됨-->
+            <!-- cancelBubble=true; 일때 test()만 실행됨-->
+        </div>
+    <!-- cancelBubble 예제 끝 -->
+    <br>
+
+    <!-- datepicker 예제 시작 -->
+    date : <input type="text" id="datepicker">
+    <!-- datepicker 예제 끝 -->
+</body>
+</html>

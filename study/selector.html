@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* x + y => x 뒤에 오는 첫번째 단락의 y만 적용 */
+    div + p {color: red;}   
+
+    /* x > y => 직계자손만 대상 */
+    #container > ul {border: 1px solid red;}
+
+    /* x+y와는 다르게 x 아래에 있는 모든 y 요소를 선택*/
+    ul ~ p {color:blue;}
+</style>
+<body>
+    1. x + y
+    <div>
+        <p>첫번째</p>
+        <p>두번째</p>
+    </div>
+    <p>세번째</p>
+
+    2. x > y
+    <div id="container">
+        <ul>
+            <li>list 1
+                <ul>
+                    <li>child</li>
+                </ul>
+            </li>
+            <li>list 2</li>
+            <li>list 3</li>
+        </ul>
+    </div>
+
+    3. x ~ y
+    <ul>
+        <p>안녕</p>
+    </ul>
+    <p>하이1</p>
+    <p>하이2</p>
+    <p>하이3</p>
+
+    4. x[href="foo"]
+    
+</body>
+</html>
